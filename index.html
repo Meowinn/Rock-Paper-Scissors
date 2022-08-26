@@ -9,7 +9,7 @@
 <body>
     <h1>Rock Paper and for the Nth time</h1>
 <script>
-    function getComputerChoice() {
+function getComputerChoice() {
        let randomizer = Math.floor(Math.random()*3 + 1);
 
        if (randomizer === 1) {
@@ -21,48 +21,92 @@
         return "scissors";
        }
     }
-    let computerSelection = getComputerChoice();
 
-    function playRound(playerSelection, computerSelection) {
+    
+let playerScore = 0;
+let compScore = 0;
+
+    function playRound() {
+
+        let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+        let computerSelection = getComputerChoice();
+
+        if (playerSelection === null) {
+            console.log("Invalid selection!")
+        }
+        
         if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You Lose! Paper beats Rock!";
+            compScore ++;
+       return "You Lose! Paper beats Rock!";
         }
        if (playerSelection === "paper" && computerSelection === "scissors") {
+            compScore ++;
             return "You Lose! Scissors beat Paper!"; 
         }
         if (playerSelection === "scissors" && computerSelection === "rock" ) {
+            compScore ++;
             return "You Lose! Rock beats Scissors!";
         }
         if (playerSelection === "rock" && computerSelection === "scissors") {
+            playerScore ++;
             return "You Win! Rock beats Scissors!";
         }
         if (playerSelection === "paper" && computerSelection === "rock") {
+            playerScore ++;
             return "You Win! Paper beats Rock!";
         }
         if (playerSelection === "scissors" && computerSelection === "paper") {
+            playerScore ++;
             return "You Win! Scissors beats Paper!";
         }
         else if (playerSelection === computerSelection) {
-            return "It's a Tie!! Play again.";
+            playerScore ++;
+            compScore ++;
+            return "It's a Tie!! Play again.";  
         }
+        
     }
 
 
+function game() {
+    console.log(playRound());
+    console.log("Round 1! " + " Player: " + playerScore + "  Computer: " + compScore);
+    console.log(playRound());
+    console.log("Round 2! " + " Player: " + playerScore + "  Computer: " + compScore);
+    console.log(playRound());
+    console.log("Round 3! " + " Player: " + playerScore + "  Computer: " + compScore);
+    console.log(playRound());
+    console.log("Round 4! " + " Player: " + playerScore + "  Computer: " + compScore);
+    console.log(playRound());
+    console.log("Last round! " + " Player: " + playerScore + "  Computer: " + compScore);
 
-    let playerSelection = "SCISSors";
-    playerSelection = playerSelection.toLowerCase();
-  
 
-  console.log(playRound(playerSelection, computerSelection));
+    if (playerScore > compScore) {
+        console.log("You Won the Game!!!") ;
+    }
+    else if (playerScore === compScore) {
+        console.log("It's a Tie!")    
+    } else {console.log("You lost to a freakin' machine!")}
 
-  function game() {
-    return playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
-    playRound(playerSelection, computerSelection);
 
 }
+    
+
+game();
+
+
+
+/*
+for (let i = 0; i<3; i++) {
+    console.log(playRound(playerSelection, computerSelection));
+    
+} 
+*/
+
+
+
+
+
 
 </script>
 
