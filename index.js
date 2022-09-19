@@ -1,18 +1,11 @@
-
-
-
 const elements = [`rock`, `paper`, `scissors`];
 let playerScore = 0;
 let compScore = 0;
-
-
 
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random()*elements.length);
     return elements[computerChoice].toString();
  }
-
-
 
  const resulted = document.querySelector(`.results`);
  const playerSelection = Array.from(document.querySelectorAll(`button`));
@@ -35,9 +28,6 @@ function game() {
 }   
 };
 
-
-
-
  function playRound(move) {
 
     if (playerScore == 5-1) {
@@ -48,7 +38,7 @@ function game() {
         return resulted.innerHTML = "It's a Tie!!!" + "<br>" + "Player: " + (playerScore + 1) + " || Computer: " + (compScore + 1);      
     } 
     else if (compScore == 5-1) {
-        setTimeout(function() {location.reload();}, 3000);
+        setTimeout(function() {location.reload();}, 000);
         return resulted.innerHTML = "You lost to a freakin' machine!" + "<br>" + "Player: " + (playerScore) + " || Computer: " + (compScore + 1);
     }
 
@@ -88,33 +78,7 @@ function game() {
      }
      
  };
-
-
 game();
-
-
-
-
-/*
-function game() {
-for (let i = 0; i < 5; i++) {
-    
-playRound();
-      
-}
-
- if (playerScore > compScore) {
-     console.log("You Won the Game!!!") ;
- }
- else if (playerScore === compScore) {
-     console.log("It's a Tie!")    
- } else {console.log("You lost to a freakin' machine!")}
-}
- */
-
-
-
-
 
 
 
