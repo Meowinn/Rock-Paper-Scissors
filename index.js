@@ -38,7 +38,7 @@ function game() {
         return resulted.innerHTML = "It's a Tie!!!" + "<br>" + "Player: " + (playerScore + 1) + " || Computer: " + (compScore + 1);      
     } 
     else if (compScore == 5-1) {
-        setTimeout(function() {location.reload();}, 000);
+        setTimeout(function() {location.reload();}, 3000);
         return resulted.innerHTML = "You lost to a freakin' machine!" + "<br>" + "Player: " + (playerScore) + " || Computer: " + (compScore + 1);
     }
 
